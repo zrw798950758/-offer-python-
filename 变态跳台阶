@@ -1,0 +1,7 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def jumpFloorII(self, number):
+        if number < 3:
+            return number
+        return 2 * self.jumpFloorII(number - 1)
+        
