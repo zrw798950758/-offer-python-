@@ -1,0 +1,10 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def jumpFloor(self, number):
+        if number < 3:
+            return number
+        f1, f2 = 1, 2
+        for i in range(3, number+1):
+            f1, f2 = f2, f1+f2
+        return f2
+        
