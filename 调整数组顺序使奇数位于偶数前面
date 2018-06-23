@@ -1,0 +1,27 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def reOrderArray(self, array):        
+        if len(array) < 2:
+            return array
+        odd, even = [], []
+        for num in array:
+            if num % 2 == 0:
+                odd.append(num)
+            else:
+                even.append(num)
+        return even + odd   
+
+
+# -*- coding:utf-8 -*-
+from collections import deque
+class Solution:
+    def reOrderArray(self, array):
+        res = deque()
+        length = len(array)
+        for i in range(length):
+            if array[i] % 2 == 0:
+                res.append(array[i])
+            if array[length - i - 1] % 2 != 0:
+                res.appendleft(array[length - i - 1])
+        return res
+        
