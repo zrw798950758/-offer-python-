@@ -1,0 +1,13 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def Power(self, base, exponent):
+        if exponent == 0:
+            return 1
+        if exponent < 0:
+            base = 1/base
+            exponent = abs(exponent)
+        res = 1
+        for i in range(exponent):
+            res *= base
+        return res
+    
