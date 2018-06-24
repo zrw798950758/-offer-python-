@@ -1,0 +1,27 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def __init__(self):
+        self.stack = []
+        self.curmin = float('inf')
+        
+    def push(self, node):
+        self.curmin = min(self.curmin, node) 
+        self.stack.append([node, self.curmin])
+        
+    def pop(self):
+        if not self.stack:
+            return None
+        node = self.stack[-1]
+        self.stack.remove(node)
+        return node[0]
+    
+    def top(self):
+        if not self.stack:
+            return None
+        return self.stack[-1][0]
+    
+    def min(self):
+        if not self.stack:
+            return None
+        return self.stack[-1][1]
+    
