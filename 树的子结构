@@ -1,0 +1,19 @@
+# -*- coding:utf-8 -*-
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution:
+    def HasSubtree(self, pRoot1, pRoot2):
+        if not pRoot1 or not pRoot2:
+            return False
+        return self.isSubtree(pRoot1, pRoot2) or self.isSubtree(pRoot1.left, pRoot2) or self.isSubtree(pRoot1.right, pRoot2)
+    
+    def isSubtree(self, p1, p2):
+        if p2 == None:
+            return True
+        if p1 == None or p1.val != p2.val:
+            return False
+        return self.isSubtree(p1.left, p2.left) and self.isSubtree(p1.right, p2.right)
+        
