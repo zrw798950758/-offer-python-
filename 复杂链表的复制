@@ -1,0 +1,20 @@
+# -*- coding:utf-8 -*-
+# class RandomListNode:
+#     def __init__(self, x):
+#         self.label = x
+#         self.next = None
+#         self.random = None
+import collections
+class Solution:
+    # 返回 RandomListNode
+    def Clone(self, pHead):
+        dic = collections.defaultdict(lambda :RandomListNode(0))
+        head = pHead
+        dic[None] = None
+        while head:
+            dic[head].label = head.label
+            dic[head].next = dic[head.next]
+            dic[head].random = dic[head.random]
+            head = head.next
+        return dic[pHead]
+    
