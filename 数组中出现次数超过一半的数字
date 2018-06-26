@@ -1,0 +1,11 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def MoreThanHalfNum_Solution(self, numbers):
+        numbers = sorted(numbers)
+        length = len(numbers)
+        mid = int(length / 2)
+        if numbers.count(numbers[mid]) > mid:
+            return numbers[mid]
+        else:
+            return 0
+        
