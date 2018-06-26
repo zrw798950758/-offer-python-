@@ -1,0 +1,8 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def GetLeastNumbers_Solution(self, tinput, k):
+        tinput = sorted(tinput)
+        if k > len(tinput):
+            return []
+        return tinput[:k]
+    
