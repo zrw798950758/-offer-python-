@@ -1,0 +1,11 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def FindGreatestSumOfSubArray(self, array):
+        if len(array) < 2:
+            return len(array)
+        res, curmax = -float('inf'), -float('inf')
+        for num in array:
+            curmax = max(curmax+num, num)
+            res = max(res, curmax)
+        return res
+    
