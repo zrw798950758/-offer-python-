@@ -1,0 +1,10 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def FirstNotRepeatingChar(self, s):
+        if len(s) == 0:
+            return -1
+        for i, c in enumerate(s):
+            if s.count(c) == 1:
+                return i
+        return -1
+    
