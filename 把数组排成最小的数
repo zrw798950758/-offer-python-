@@ -1,0 +1,9 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def PrintMinNumber(self, numbers):
+        if not numbers:
+            return ''
+        lmd = lambda x,y:int(str(x)+str(y)) - int(str(y)+str(x))
+        res = sorted(numbers, cmp=lmd)
+        return ''.join([str(i) for i in res])
+    
