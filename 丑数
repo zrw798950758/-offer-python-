@@ -1,0 +1,20 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def GetUglyNumber_Solution(self, index):
+        if index <= 0:
+            return 0
+        uglylist = [1]
+        twoidx = 0
+        threeidx = 0
+        fiveidx = 0
+        for i in range(index-1):
+            new = min(uglylist[twoidx]*2, uglylist[threeidx]*3, uglylist[fiveidx]*5)
+            uglylist.append(new)
+            if new%2 == 0:
+                twoidx += 1
+            if new%3 == 0:
+                threeidx += 1
+            if new%5 == 0:
+                fiveidx += 1
+        return uglylist[-1]
+    
