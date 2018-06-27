@@ -1,0 +1,13 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def InversePairs(self, data):
+        count = 0
+        copy = []
+        for n in data:
+            copy.append(n)
+        copy.sort()
+        for i in range(len(copy)):
+            count += data.index(copy[i])
+            data.remove(copy[i])
+        return count%1000000007
+    
