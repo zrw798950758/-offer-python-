@@ -1,0 +1,9 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def ReverseSentence(self, s):
+        if len(s) == 0:
+            return s
+        ls = s.split(' ')
+        ls.reverse()
+        return ' '.join(ls)
+    
