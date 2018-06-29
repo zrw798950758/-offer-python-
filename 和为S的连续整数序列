@@ -1,0 +1,19 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def FindContinuousSequence(self, tsum):
+        if tsum < 1:
+            return 0
+        res = []
+        for i in range(1, tsum-1):
+            cursum = i
+            cur = [i]
+            for j in range(i+1, tsum):
+                cursum += j
+                cur.append(j)
+                if cursum == tsum:
+                    res.append(cur)
+                    break
+                elif cursum > tsum:
+                    break
+        return res
+    
