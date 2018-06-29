@@ -1,0 +1,7 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def LeftRotateString(self, s, n):
+        if n > len(s) or n == 0:
+            return s
+        return s[n:]+s[:n]
+    
