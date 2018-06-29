@@ -1,0 +1,13 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def IsContinuous(self, numbers):
+        if not numbers:
+            return False
+        numbers.sort()
+        nzero = numbers.count(0)
+        if len(set(numbers[nzero:])) != len(numbers[nzero:]):
+            return False
+        if numbers[-1] - numbers[nzero] == len(numbers)-1 or numbers[nzero] + nzero >= numbers[-1]:
+            return True
+        return False
+    
