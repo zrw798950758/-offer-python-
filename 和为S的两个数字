@@ -1,0 +1,12 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def FindNumbersWithSum(self, array, tsum):
+        if not isinstance(array, list):
+            return []
+        ls = []
+        for i, v in enumerate(array):
+            for v1 in array[i:]:
+                if v + v1 == tsum:
+                    ls.append([v, v1])
+        return ls[0] if ls else []
+    
