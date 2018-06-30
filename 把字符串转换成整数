@@ -1,1 +1,15 @@
-
+# -*- coding:utf-8 -*-
+class Solution:
+    def StrToInt(self, s):
+        if not s:
+            return 0
+        sign = '+'
+        if s[0] in ['+', '-']:
+            sign = s[0]
+            s = s[1:]
+        res = 0
+        for ch in s:
+            if not ch.isdigit():
+                return 0
+            res = res*10 + int(ch)
+        return -res if sign == '-' else res
