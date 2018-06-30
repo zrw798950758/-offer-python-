@@ -1,0 +1,12 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def LastRemaining_Solution(self, n, m):
+        if not n or not m:
+            return -1
+        res = list(range(n))
+        i = 0
+        while len(res) > 1:
+            i = (m + i - 1) % len(res)
+            res.pop(i)
+        return res[0]
+    
