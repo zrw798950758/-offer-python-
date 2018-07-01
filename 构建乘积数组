@@ -1,0 +1,15 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def multiply(self, A):
+        if not A:
+            return []
+        B = []
+        cur = 1
+        for i in range(len(A)):
+            for j in range(len(A)):
+                if i != j:
+                    cur *= A[j]
+            B.append(cur)
+            cur = 1
+        return B
+    
