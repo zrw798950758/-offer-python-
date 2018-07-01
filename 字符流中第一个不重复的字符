@@ -1,0 +1,15 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    # 返回对应char
+    def __init__(self):
+        self.s = ''
+        
+    def FirstAppearingOnce(self):
+        for ch in self.s:
+            if self.s.count(ch) == 1:
+                return ch
+        return '#'
+    
+    def Insert(self, char):
+        self.s = self.s + char
+        
