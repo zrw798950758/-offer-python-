@@ -1,0 +1,21 @@
+# -*- coding:utf-8 -*-
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution:
+    def Print(self, pRoot):
+        stack = [pRoot]
+        level = 1
+        res = []
+        while stack and pRoot:
+            temp = [root.val for root in stack]
+            if level % 2 == 0:
+                res.append(temp[::-1])
+            else:
+                res.append(temp)
+            stack = [kid for root in stack for kid in (root.left, root.right) if kid]
+            level += 1
+        return res
+    
