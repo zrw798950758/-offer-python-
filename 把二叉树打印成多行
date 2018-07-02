@@ -1,0 +1,17 @@
+# -*- coding:utf-8 -*-
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution:
+    # 返回二维列表[[1,2],[4,5]]
+    def Print(self, pRoot):
+        stack = [pRoot]
+        res = []
+        while pRoot and stack:
+            temp = [root.val for root in stack]
+            res.append(temp)
+            stack = [kid for root in stack for kid in (root.left, root.right) if kid]
+        return res
+    
