@@ -1,0 +1,18 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def __init__(self):
+        self.val = {}
+        
+    def movingCount(self, threshold, rows, cols):
+        return self.moving(threshold, rows, cols, 0, 0)
+    
+    def moving(self, threshold, rows, cols, i, j):
+        if i/10 + i%10 + j/10 + j%10 > threshold:
+            return 0
+        if i >= rows or j >= cols or i < 0 or j < 0:
+            return 0
+        if (i, j) in self.val:
+            return 0
+        self.val[(i, j)] = 1
+        return 1 + self.moving(threshold, rows, cols, i+1, j) + self.moving(threshold, rows, cols, i-1, j) + self.moving(threshold, rows, cols, i, j+1) + self.moving(threshold, rows, cols, i, j-1)
+    
