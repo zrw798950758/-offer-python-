@@ -1,0 +1,25 @@
+# -*- coding:utf-8 -*-
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution:
+    # 返回对应节点TreeNode
+    def KthNode(self, pRoot, k):
+        self.idx = 0
+        self.k = k
+        self.target = None
+        self.inorder(pRoot)
+        return self.target
+    
+    def inorder(self, root):
+        if not root:
+            return
+        self.inorder(root.left)
+        self.idx += 1
+        if self.idx == self.k:
+            self.target = root
+            return self.target
+        self.inorder(root.right)
+        
