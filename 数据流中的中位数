@@ -1,0 +1,16 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def __init__(self):
+        self.stack = []
+        
+    def Insert(self, num):
+        self.stack.append(num)
+        self.stack.sort()
+        
+    def GetMedian(self, stack):
+        n = len(self.stack)
+        if n % 2 != 0:
+            return self.stack[int(n/2)]
+        else:
+            return (self.stack[int(n/2)-1]+self.stack[int(n/2)])/2.0
+        
